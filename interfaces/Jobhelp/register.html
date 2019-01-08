@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Login || JobHelp</title>
+        <title>Registro</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -85,49 +85,65 @@
                 <header id="sticky-header" class="header-area">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-xs-12">
-                                <div class="logo"><a href="index.html"><img src="images/logo/logo.png" alt="JobHelp"></a></div>
+                            <div class="col-md-10 col-xs-12">
+                                <div class="logo"><img src="images/logo/logo.png" alt="JobHelp"></div>
                             </div>
+                            <!--<div class="login-btn pt-36">
+                                <a class="modal-view button" href="#" data-toggle="modal" data-target="#productModal">Iniciar sesión</a>
+                            </div>-->
                         </div>
                     </div>
                 </header>
                 <!-- End of Header Area -->
                 <!--Start of Account Area-->
-                <div class="account-area pt-70 mb-120">
-                    <div class="container">
+                <div class="account-area pt-70 pb-70 orange-bg text-center">
+                    <div class="container pb-41 bg-white">
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-9 col-md-offset-2">
                                 <form action="#">
-                                    <div class="area-title text-center">
+                                    <div class="text-center">
                                         <h2 class="pt-10 pb-10">Regístrate</h2>
                                     </div>
                                         <div class="login-form mt-36">
-                                            <div class="single-info pb-14 fix">
-                                                <label for="name" class="pull-left m-0 lg-text">User Name:</label>
+                                            <label>Introduce los siguientes datos para completar el registro.</label>
+                                            </br>
+                                            </br>
+                                            </br>
+                                            <div class="single-info col-md-offset-3 pb-14 fix">
+                                                <label for="name" class="pull-left m-0 lg-text">Nombre:</label>
                                                 <div class="form-box col-4 fix">
-                                                    <input type="text" id="name" name="user_name" placeholder="Please enter your name">
+                                                    <input type="text" id="name" name="user_name" placeholder="Introduce tu nombre" required>
                                                 </div>
                                             </div>
-                                            <div class="single-info mb-14 fix">
-                                                <label for="email" class="pull-left m-0 lg-text">Email address:</label>
+                                            <div class="single-info col-md-offset-3 mb-14 fix">
+                                                <label for="email" class="pull-left m-0 lg-text">Apellido:</label>
                                                 <div class="form-box col-4 fix">
-                                                    <input type="text" id="email" name="email" placeholder="Please enter your email">
+                                                    <input type="text" id="email" name="email" placeholder="Introduce tu apellido" required>
                                                 </div>
                                             </div>
-                                            <div class="single-info mb-14 fix">
-                                                <label for="password" class="pull-left m-0 lg-text">Password:</label>
+                                            <div class="single-info col-md-offset-3 mb-14 fix">
+                                                <label for="password" class="pull-left m-0 lg-text">Contraseña:</label>
                                                 <div class="form-box col-4 fix">
-                                                    <input type="password" id="password" name="password" placeholder="Please enter your password">
+                                                    <input type="password" id="password" name="password" placeholder="Introduce una contraseña" required>
                                                 </div>
                                             </div>
-                                            <div class="single-info mb-14 fix">
-                                                <label for="r_password" class="pull-left m-0 lg-text">Retype password:</label>
+                                            <div class="single-info col-md-offset-3 mb-14 fix">
+                                                <label for="r_password" class="pull-left m-0 lg-text">Repite contraseña:</label>
                                                 <div class="form-box col-4 fix">
-                                                    <input type="password" id="r_password" name="r_password" placeholder="Please enter your password">
+                                                    <input type="password" id="r_password" name="r_password" placeholder="Repite la contraseña" required>
+                                                </div>
+                                            </div>
+                                            <div class="single-info col-md-offset-3 mb-14 fix">
+                                                <label for="r_password" class="pull-left m-0 lg-text">Ramas:</label>
+                                                <div class="pt-10 col-md-4 fix">
+                                                    <input type="checkbox" class="col-4">Servicios Socioculturales y a la Comunidad</br></br>
+                                                    <input type="checkbox" class="col-4">Informática y Comunicaciones</br></br>
+                                                    <input type="checkbox" class="col-4">Comercio y Márketing</br></br>
+                                                    <input type="checkbox" class="mr-30 col-4">Química  
                                                 </div>
                                             </div>
                                         </div>
-                                        <span class="block conditions fix mt-34"><input type="checkbox" class="p-0 pull-left">I agree with the terms of use</span>
+                                        <span class="block conditions text-center fix mt-34"><input type="checkbox">He leido y acepto <a href="">los términos y condiciones</a></span>
                                         <button class="button button-style-two medium mt-15">Continue</button>
                                     </div>
                                 </form>    
