@@ -1,0 +1,7 @@
+git stash
+git checkout backup
+git add .
+git commit -m "Automatic Backup  %Time%"  
+git push --all origin
+git stash pop
+git checkout -
