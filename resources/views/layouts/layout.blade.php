@@ -13,7 +13,7 @@
 
         <!-- favicon
         ============================================ -->
-        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/favicon.ico')}}">
 
         <!-- Google Fonts
         ============================================ -->
@@ -44,7 +44,7 @@
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
         <!-- Modernizr JS -->
         <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
         <!-- Color Css Files
         ============================================ -->
       

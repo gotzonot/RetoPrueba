@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function(){
+	return view ('index');
+});
+
 Route::resource('alumno/index', 'AlumnoController');
 Route::get('alumno/show/{id}', 'AlumnoController@show');
 Route::resource('alumno/edit', 	'AlumnoController');
