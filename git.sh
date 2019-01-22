@@ -8,3 +8,4 @@ curtime=`date`
 git commit -m "Backup Automatico @ $curtime" 
 git push origin master 
 echo "Copia a github finalizada."
+chmod -R 777 *
