@@ -18,18 +18,25 @@ Route::get('/', function(){
 Route::resource('alumno/index', 'AlumnoController');
 Route::get('alumno/show/{id}', 'AlumnoController@show');
 Route::resource('alumno/edit', 	'AlumnoController');
-Route::resource('alumno/create','AlumnoController');
+Route::get('alumno/create','AlumnoController@create');
+Route::get('alumno/insertar', 'AlumnoController@store');
 
-Route::resource('curriculum', 'CurriculumController');
-Route::resource('curso', 'CursoController');
+Route::resource('profesor/index', 'ProfesorController');
+Route::get('profesor/show/{id}', 'ProfesorController@show');
+Route::resource('profesor/edit', 'ProfesorController');
+Route::get('profesor/create', 'ProfesorController@create');
+Route::get('profesor/insertar', 'ProfesorController@store');
 
 Route::resource('oferta/index', 'OfertaController');
 Route::get('oferta/show/{id}', 'OfertaController@show');
 Route::resource('oferta/edit', 'OfertaController');
-Route::resource('oferta/create', 'OfertaController');
+Route::get('oferta/create', 'OfertaController@create');
+Route::get('oferta/insertar', 'OfertaController@store');
 
-Route::resource('profesor/index', 'ProfesorController');
-Route::resource('profesor/show', 'ProfesorController');
-Route::resource('profesor/edit', 'ProfesorController');
-Route::resource('profesor/create', 'ProfesorController');
+Route::resource('curriculum', 'CurriculumController');
+Route::resource('curso', 'CursoController');
+
+
+
+
 

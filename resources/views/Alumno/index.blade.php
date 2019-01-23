@@ -11,7 +11,7 @@
                         <div class="separator mt-35 mb-77">
                             <span><img src="images/icons/1.png" alt=""></span>
                         </div>
-                        <!--INICIO FILTROS-->
+                    <!--INICIO FILTROS-->
                         <div class="container mb-20">
                         <h4 class="text-left">Filtrar por estudios</h4>
 
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <a href="" class="button large-button">Añadir Alumno</a>
+                        <a href="{{ url('/alumno/create')}}" class="button large-button">Añadir Alumno</a>
                     </div>
                 </div>
             </div>

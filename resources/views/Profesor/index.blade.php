@@ -21,26 +21,6 @@
                             <div class="form-box col-8 fix">
                                 <input type="text" id="name" name="user_name" placeholder="Introduce el nombre" required>
                             </div>
-                            <!--
-                            <div class="select small">
-                                <select name="date">
-                                    <option>Toki guztiak</option>
-                                    <option>Derio</option>
-                                    <option>Bilbao</option>
-                                    <option>Galdakao</option>
-                
-                                </select>
-                            </div>
-                            <div class="select medium">
-                                <select name="date">
-                                    <option>Kategoria</option>
-                                    <option>Informatika</option>
-                                    <option>Kimika</option>
-                                    <option>Marketing</option>
-                               
-                                </select>
-                            </div>
-                        -->
                         </div>
                     </div>
                     <!-- HASTA AQUI -->
@@ -66,9 +46,9 @@
                             <span class="mtb-30 block">{{$profesor->departamento}}</span>
                         </div>
                         <div class="keyword col-4 pl-20 pt-39">
-                            <a href="#" class="button mr-10">&#9997; Editar</a>
-                            <!--<a href="#" class="button mr-10">Desactivar</a>
-                            <a href="#" class="button">&#x2717; Eliminar</a> -->
+                            <a href="{{ url('/profesor/show/'.$profesor->id )}}" class="button mr-10">&#9997; Editar</a>
+                            <a href="#" class="button mr-10">Desactivar</a>
+                            <a href="#" class="button">&#x2717; Eliminar</a>
                         </div>
                     </div>
            
@@ -77,7 +57,7 @@
                          
                 </div>
                 <div class="text-center">
-                    <a href="" class="button large-button">Añadir profesor</a>
+                    <a href="{{ url('/profesor/create')}}" class="button large-button">Añadir profesor</a>
                 </div>
             </div>
         </div>

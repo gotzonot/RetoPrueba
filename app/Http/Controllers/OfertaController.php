@@ -36,9 +36,19 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['titulo'=>'required', 'empresa'=>'required', 'localizacion'=>'required', 'sector'=>'required', 'descripcion'=>'required', 'funciones'=>'required', 'requisitos'=>'required',]);
-        Curriculum::create($request->all());
-        return redirect()->route('oferta.index')->with('success','Registro creado satisfactoriamente');
+      //  $this->validate($request,['titulo'=>'required', 'empresa'=>'required', 'localizacion'=>'required', 'sector'=>'required', 'descripcion'=>'required', 'funciones'=>'required', 'requisitos'=>'required',]);
+        $oferta= new oferta;
+        $oferta->titulo=$request->input('titulo');
+        $oferta->empresa=$request->input('empresa');
+        $oferta->localizacion=$request->input('localizacion');
+        $oferta->sector=$request->input('sector');
+        $oferta->descripcion=$request->input('descripcion');
+        $oferta->funciones=$request->input('funciones');
+        $oferta->requisitos=$request->input('requisitos');
+        $oferta->save();
+        
+         return view('Oferta/index');
+        //return redirect()->route('oferta.index')->with('success','Registro creado satisfactoriamente');
     }
 
     /**

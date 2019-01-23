@@ -24,27 +24,27 @@
         ============================================ -->
         <link rel="stylesheet" href=" {{ asset('css/bootstrap.min.css')}}">
 
-        <!-- This core.css file contents all plugins css file
+        <!-- This core.css file contents all plugins css file QUITADO POR ALEX !!!!!!!
         ============================================ -->
         <link rel="stylesheet" href="{{ asset('css/core.css') }}">
         <!-- Theme shortcodes/elements style
         ============================================ -->
         <link rel="stylesheet" href=" {{ asset('css/shortcode/shortcodes.css') }}">
-        <!-- Color Swithcer CSS
-        ============================================ -->
-        <link rel="stylesheet" href="{{ asset('css/plugins/color-switcher.css') }}">
+        <!-- Color Swithcer CSS       QUITADO POR ALEX !!!!!!!!!!!!!
+        ============================================ 
+        <link rel="stylesheet" href="{{ asset('css/plugins/color-switcher.css')  }}"> -->
         <!--  Theme main style
         ============================================ -->
         
-        <!-- Color CSS
-        ============================================ -->
+        <!-- Color CSS         QUITADO POR ALEX !!!!!!!!!!!!!!!
+        ============================================ 
         <link rel="stylesheet" href="{{ asset('css/plugins/color.css') }}">
         <!-- Responsive CSS
         ============================================ -->
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
         <!-- Modernizr JS -->
         <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Color Css Files
         ============================================ -->
       

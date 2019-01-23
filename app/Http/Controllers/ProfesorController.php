@@ -36,9 +36,21 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,['departamento'=>'required', 'nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required', 'admin'=>'required']);
-        Profesor::create($request->all());
-        return redirect()->route('profesor.index')->with('success','Registro creado satisfactoriamente');
+
+        //$this->validate($request,['departamento'=>'required', 'nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required', 'admin'=>'required']);
+        $profesor= new profesor;
+        $profesor->nombreapellidos=$request->input('nombreapellidos');
+        $profesor->dni=$request->input('dni');
+        $profesor->email=$request->input('email');
+        $profesor->password=$request->input('password');
+        $profesor->direccion=$request->input('direccion');
+        $profesor->ciudad=$request->input('ciudad');
+        $profesor->telefono=$request->input('telefono');
+        $profesor->departamento=$request->input('departamento');
+        $profesor->admin=$request->input('admin');
+        $profesor->save();
+        
+         return view('Profesor/index');
     }
 
     /**

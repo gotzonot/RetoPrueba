@@ -1,84 +1,88 @@
-   @extends('layouts.layout')
+     
+    @extends('layouts.layout')
     @section('content')
-                <!-- End of Header Area -->
-        <!--Start of Candidates Area-->
-                <div class="candidates-area ptb-120">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="section-title text-center ">
-                                    <h2 class="uppercase">Mis alumnos</h2>
-                                    <div class="separator mt-35 mb-77">
-                                        <span><img src="images/icons/1.png" alt=""></span>
-                                    </div>
-                                    <!--INICIO FILTROS-->
-                                    <div class="container mb-20">
-                                    <h4 class="text-left">Filtrar por estudios</h4>
+
             
-                                <select class="selectpicker " >
-                                  <optgroup label="Informatica">
-                                    <option>Desarrollo de Aplicaciones Multiplataforma</option>
-                                    <option>Desarrollo de Aplicaciones Web</option>
-                                    <option>Administracion de Sistemas Informaticos en Red</option>
-                                    <option>Sistemas Microinformáticos y Redes</option>
-                                  </optgroup>
-                                  <optgroup label="Administracion y Finanzas">
-                                    <option>Administracion y Finanzas</option>
-                                    <option>Gestión de Ventas y Espacios Comerciales</option>                      
-                                  </optgroup>
-                                  <optgroup label="Quimica">
-                                    <option>Laboratorio de Analisis y de Control de Calidad</option>                      
-                                  </optgroup>
-                                   <optgroup label="Comercio y Marketing">
-                                    <option>Actividades Comerciales</option>                      
-                                  </optgroup>
-                                   <optgroup label="Electricidad-Electronica">
-                                    <option>Instalaciones de Comunicaciones</option>                      
-                                  </optgroup>
-                                </select>
+<!--Start of Single Job Post Area-->
+<div class="single-job-post-area pt-70 mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form>
+                    <div class="single-job-content">
+                        <div class="area-title text-center">
+                                    <h2 class="pt-10 pb-10">PERFIL DEL Profesor</h2>
+                                </div>
+                        <div class="single-job-form">
+
+                            <div class="single-info mb-4">
+                                <div class="title uppercase mt-58 mb-25"><span class="medium">Nombre y Apellidos</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="nombre" name="nombre" value="{{$profesores->nombreapellidos}}"> 
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-4">
+                                <div class="title uppercase mt-58 mb-25"><span class="medium">Dni</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="l_name" name="apellidos" value="{{$profesores->dni}}">
+                                </div>
+                            </div>
                         
+                            <div class="single-info mb-4">
+                                 <div class="title uppercase mt-58 mb-25"><span class="medium">Departamento</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="country" name="departamento" value="{{$profesores->ciudad}}">
                                 </div>
-                                <!--FIN FILTROS-->
                             </div>
+                            <div class="single-info mb-4">
+                                <div class="title uppercase mt-58 mb-25"><span class="medium">Email</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="country" name="departamento" value="{{$profesores->email}}">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-4">
+                                 <div class="title uppercase mt-58 mb-25"><span class="medium">Telefono</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="country" name="departamento" value="{{$profesores->telefono}}">
+                                </div>
+                            </div>
+
+                            <div class="single-info mb-4">
+                                 <div class="title uppercase mt-58 mb-25"><span class="medium">Direccion</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="country" name="departamento" value="{{$profesores->direccion}}">
+                                </div>
+                            </div>
+
+                             <div class="single-info mb-4">
+                                 <div class="title uppercase mt-58 mb-25"><span class="medium">Ciudad</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="country" name="departamento" value="{{$profesores->ciudad}}">
+                                </div>
+                            </div>
+
+
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="job-post-container fix mb-70">
+                          
+                        <div class="single-job-form">
+                                                                       
+                        <div class="mt-38">
+                            <a href="" class="button button-large-box lg-btn mr-20">Editar</a>
+                            <a href="{{ url('/alumno/index')}}" class="button button-large-box lg-btn">Atrás</a>
+                        </div>
 
-                         {{--  @if($alumnos->count())  
-                            @foreach($alumnos as $alumno) --}} 
-   
-
-                                    <div class="single-job-post fix">
-                                        <div class="job-title col-3 pl-30">
-                                            <span class="pull-left block mtb-17">
-                                                <a href="#"><img src= "" width="72" alt=""></a>
-                                            </span>
-                                            <div class="fix pl-30 mt-29">
-                                                <h4 class="mb-5">   {{--{{$alumno->nombreApellido}}--}}  </h4>
-                                            </div>
-                                        </div>
-                                        <div class="address col-3 pl-100">
-                                            <span class="mtb-30 block">   {{--{{$alumno->dni}}--}}  </span>
-                                        </div>
-                                        <div class="keyword col-4 pl-20 pt-39">
-                                            <a href="#" class="button mr-10">&#9997; Editar</a>
-                                            <a href="#" class="button mr-10">Desactivar</a>
-                                            <a href="#" class="button">&#x2717; Eliminar</a>
-                                        </div>
-                                    </div>
-                    
-                     {{--     @endforeach
-                        @endif --}} 
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <a href="  {{-- {{ route('alumno.show') }}--}} " class="button large-button">Añadir Alumno</a>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
-                </div>
-                <!-- End of Candidates Area -->
-                
+                </form>
+ 
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Single Job Post Area-->
+    
     @stop
+

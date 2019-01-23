@@ -36,9 +36,19 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-         $this->validate($request,['nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required']);
-        Alumno::create($request->all());
-        return redirect()->route('alumno.index')->with('success','Registro creado satisfactoriamente');
+         //$this->validate($request,['nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required']);
+        $alumno= new alumno;
+        //$alumno->foto=$request->input('foto')->move("images");
+        $alumno->nombreapellidos=$request->input('nombreapellidos');
+        $alumno->dni=$request->input('dni');
+        $alumno->email=$request->input('email');
+        $alumno->password=$request->input('password');
+        $alumno->direccion=$request->input('direccion');
+        $alumno->ciudad=$request->input('ciudad');
+        $alumno->telefono=$request->input('telefono');
+        $alumno->save();
+        
+         return view('Alumno/index');
     }
 
     /**

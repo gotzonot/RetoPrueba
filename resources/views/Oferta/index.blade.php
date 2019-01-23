@@ -56,11 +56,9 @@
                             @foreach($ofertas as $oferta) 
                                     <!-- INICIO DE UNA OFERTA -->         
                                                 
-                                    <div class="single-job-post fix">
+                                    <div class="single-job-post fix mb-20">
                                         <div class="job-title col-4 pl-30">
-                                            <span class="pull-left block mtb-17">
-                                                <a href="#"><img src="" alt="noFoto" width="90px"></a>
-                                            </span>
+                                            
                                             <div class="fix pl-30 mt-29">
                                                 <h4 class="mb-5">{{$oferta->titulo}}</h4>
                                                 
@@ -80,8 +78,13 @@
                                    
                                 </div>
                             </div>
+                            <div class="text-center">
+                                <a href="{{ url('/oferta/create')}}" class="button large-button">Crear oferta</a>
+                            </div>
                         </div>
+
                     </div>
+
                 </div>
                 <!-- End of Job Post Area -->
     @stop

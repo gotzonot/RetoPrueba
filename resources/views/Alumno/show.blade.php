@@ -35,6 +35,7 @@
                                     <input type="text" id="country" name="departamento" value="{{$alumnos->email}}">
                                 </div>
                             </div>
+
                             <div class="single-info mb-4">
                                  <div class="title uppercase mt-58 mb-25"><span class="medium">Telefono</span></div>
                                 <div class="form-box fix">
@@ -46,6 +47,13 @@
                                  <div class="title uppercase mt-58 mb-25"><span class="medium">Direccion</span></div>
                                 <div class="form-box fix">
                                     <input type="text" id="country" name="departamento" value="{{$alumnos->direccion}}">
+                                </div>
+                            </div>
+
+                             <div class="single-info mb-4">
+                                 <div class="title uppercase mt-58 mb-25"><span class="medium">Ciudad</span></div>
+                                <div class="form-box fix">
+                                    <input type="text" id="country" name="departamento" value="{{$alumnos->ciudad}}">
                                 </div>
                             </div>
 
