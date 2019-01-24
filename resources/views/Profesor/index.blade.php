@@ -48,7 +48,7 @@
                         <div class="keyword col-4 pl-20 pt-39">
                             <a href="{{ url('/profesor/show/'.$profesor->id )}}" class="button mr-10">&#9997; Editar</a>
                             <a href="#" class="button mr-10">Desactivar</a>
-                            <a href="#" class="button">&#x2717; Eliminar</a>
+                            <a href="{{url('/profesor/eliminar/'.$profesor->id)}}" class="button">&#x2717; Eliminar</a>
                         </div>
                     </div>
            

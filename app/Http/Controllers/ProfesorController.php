@@ -50,7 +50,8 @@ class ProfesorController extends Controller
         $profesor->admin=$request->input('admin');
         $profesor->save();
         
-         return view('Profesor/index');
+        $profesores=profesor::all();
+        return redirect('profesor/index');
     }
 
     /**
@@ -61,7 +62,7 @@ class ProfesorController extends Controller
      */
     public function show($id)
     {
-         $profesores=Profesor::find($id);
+        $profesores=Profesor::find($id);
         return  view('Profesor.show',compact('profesores'));
     }
 
@@ -74,7 +75,7 @@ class ProfesorController extends Controller
     public function edit($id)
     {
         $profesores=Profesor::find($id);
-        return view('profesor.edit',compact('oferta'));
+        return view('Profesor.edit',compact('profesores'));
     }
 
     /**
@@ -100,6 +101,7 @@ class ProfesorController extends Controller
     public function destroy($id)
     {
         Profesor::find($id)->delete();
-        return redirect()->route('profesor.index')->with('success','Registro eliminado satisfactoriamente');
+        $profesores=profesor::all();
+        return redirect('profesor/index');
     }
 }

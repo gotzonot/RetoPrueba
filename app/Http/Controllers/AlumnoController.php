@@ -14,7 +14,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $alumnos=alumno::all();
+        $alumnos=alumno::all()->where('baja',0);
         return view('Alumno.index',compact('alumnos')); 
     }
 
@@ -47,8 +47,9 @@ class AlumnoController extends Controller
         $alumno->ciudad=$request->input('ciudad');
         $alumno->telefono=$request->input('telefono');
         $alumno->save();
-        
-         return view('Alumno/index');
+
+        $alumnos=alumno::all();
+        return redirect('alumno/index');
     }
 
     /**
@@ -71,8 +72,8 @@ class AlumnoController extends Controller
      */
     public function edit($id)
     {
-          $alumnos=Alumno::find($id);
-        return view('Alumno.edit',compact('alumno'));
+        $alumnos=Alumno::find($id);
+        return view('Alumno.edit',compact('alumnos'));
     }
 
     /**
@@ -99,6 +100,15 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         Alumno::find($id)->delete();
-        return redirect()->route('alumno.index')->with('success','Registro eliminado satisfactoriamente');
+        $alumnos=alumno::all();
+        return redirect('alumno/index');
+}
+    public function darbaja($id){
+
+
+        //Alumno::find($id)->update(['baja' => 1]);
+        $alumnos=alumno::all();
+        return redirect('alumno/index');
+
     }
 }

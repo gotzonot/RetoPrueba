@@ -63,7 +63,7 @@
                             <div class="col-md-3 col-xs-12">
                                 <div class="logo">
                                     <a href="{{ url('/') }}">
-                                        <img src="{{ asset('/images/logo/logo.jpg') }}" alt="LOGO">
+                                        <img src="{{ asset('/images/logo/logo.png') }}" alt="LOGO">
                                     </a>
                                 </div>
                             </div>

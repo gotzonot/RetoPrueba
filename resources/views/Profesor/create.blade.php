@@ -83,10 +83,9 @@
                                     </select>
                             </div>
                        
-                            <div class="ml-160 mt-42">
-                                 <a type="submit">Guardar</a>
+                             <div class="ml-160 mt-42">
+                                 <a href="#" class="button button-medium-box">Guardar</a>
                             </div>
-
                             <input type="submit" name="hola" value="hola">
                         </div>
                     </div>
