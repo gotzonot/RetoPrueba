@@ -83,12 +83,22 @@ class AlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $this->validate($request,['nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required']);
- 
-        Alumno::find($id)->update($request->all());
-        return redirect()->route('Alumno.index')->with('success','Registro actualizado satisfactoriamente');
+       // $this->validate($request,['nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required']);
+        $alumno=Alumno::find($request->id);
+        //$alumno->foto=$request->input('foto')->move("images");
+        $alumno->nombreapellidos=$request->input('nombreapellidos');
+        $alumno->dni=$request->input('dni');
+        $alumno->email=$request->input('email');
+        
+        $alumno->direccion=$request->input('direccion');
+        $alumno->ciudad=$request->input('ciudad');
+        $alumno->telefono=$request->input('telefono');
+        $alumno->save();
+
+        $alumnos=alumno::all();
+        return redirect('alumno/index');
     }
 
     /**
@@ -103,10 +113,12 @@ class AlumnoController extends Controller
         $alumnos=alumno::all();
         return redirect('alumno/index');
 }
-    public function darbaja($id){
+    public function desactivar(Request $request){
+
+        $alumno=Alumno::find($request->id);
+        $alumno->update(['baja' => 1]);
 
 
-        //Alumno::find($id)->update(['baja' => 1]);
         $alumnos=alumno::all();
         return redirect('alumno/index');
 

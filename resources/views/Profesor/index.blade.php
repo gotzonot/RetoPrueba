@@ -9,7 +9,7 @@
                 <div class="section-title text-center ">
                     <h2 class="uppercase">Profesores</h2>
                     <div class="separator mt-35 mb-77">
-                        <span><img src="images/icons/1.png" alt=""></span>
+                        <span><img src="{{ asset('images/icons/1.png')}}" alt=""></span>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,9 @@
 
                     <div class="single-job-post fix">
                         <div class="job-title col-3 pl-30">
-                            
+                              <span class="pull-left block mtb-17">
+                                    <a href="#"><img src= "{{ asset($profesor->foto) }} "width="72" alt="noFoto"></a>
+                                </span>
                             <div class="fix pl-30 mt-29">
                                 <h4 class="mb-5">{{$profesor->nombreapellidos}}</h4>
                             </div>
@@ -46,8 +48,8 @@
                             <span class="mtb-30 block">{{$profesor->departamento}}</span>
                         </div>
                         <div class="keyword col-4 pl-20 pt-39">
-                            <a href="{{ url('/profesor/show/'.$profesor->id )}}" class="button mr-10">&#9997; Editar</a>
-                            <a href="#" class="button mr-10">Desactivar</a>
+                            <a href="{{ url('/profesor/show/'.$profesor->id )}}" class="button mr-10">&#9997; Detalles</a>
+                            <a href="{{url('/profesor/desactivar/'.$profesor->id)}}" class="button mr-10">Desactivar</a>
                             <a href="{{url('/profesor/eliminar/'.$profesor->id)}}" class="button">&#x2717; Eliminar</a>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        $profesores=profesor::all();
+        $profesores=profesor::all()->where('baja',0);
         return view('Profesor.index',compact('profesores')); 
     }
 
@@ -87,9 +87,18 @@ class ProfesorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['departamento'=>'required', 'nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required', 'admin'=>'required']);
-        Profesor::find($id)->update($request->all());
-        return redirect()->route('profesor.index')->with('success','Registro actualizado satisfactoriamente');
+        // $this->validate($request,['nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required']);
+        $profesor=Profesor::find($request->id);
+        $profesor->nombreapellidos=$request->input('nombreapellidos');
+        $profesor->dni=$request->input('dni');
+        $profesor->email=$request->input('email');
+        $profesor->direccion=$request->input('direccion');
+        $profesor->ciudad=$request->input('ciudad');
+        $profesor->telefono=$request->input('telefono');
+        $profesor->save();
+
+        $profesor=profesor::all();
+        return redirect('profesor/index');
     }
 
     /**
@@ -103,5 +112,15 @@ class ProfesorController extends Controller
         Profesor::find($id)->delete();
         $profesores=profesor::all();
         return redirect('profesor/index');
+    }
+
+    public function desactivar(Request $request){
+
+        $profesor=Profesor::find($request->id);
+        $profesor->update(['baja' => 1]);
+        
+        $profesor=profesor::all();
+        return redirect('profesor/index');
+
     }
 }

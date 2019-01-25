@@ -36,6 +36,7 @@
                 
                                 <div class="mt-38">
                                     <a href="" class="button button-large-box lg-btn mr-20">Apuntarse</a>
+                                    <a href="{{ url('/oferta/edit/'.$ofertas->id)}}" class="button button-large-box lg-btn mr-20">Editar</a>
                                     <a href="{{ url('/oferta/index')}}" class="button button-large-box lg-btn">Atras</a>
                                 </div>
                             </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\oferta;
+use App\alumno;
+use App\apuntado;
 
 class OfertaController extends Controller
 {
@@ -72,7 +74,7 @@ class OfertaController extends Controller
     public function edit($id)
     {
         $ofertas=Oferta::find($id);
-        return view('oferta.edit',compact('oferta'));
+        return view('Oferta.edit',compact('ofertas'));
     }
 
     /**
@@ -84,9 +86,16 @@ class OfertaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['titulo'=>'required', 'empresa'=>'required', 'localizacion'=>'required', 'sector'=>'required', 'descripcion'=>'required', 'funciones'=>'required', 'requisitos'=>'required',]);
-        Oferta::find($id)->update($request->all());
-        return redirect()->route('oferta.index')->with('success','Registro actualizado satisfactoriamente');
+        $oferta=Oferta::find($request->id);
+        $oferta->titulo=$request->input('titulo');
+        $oferta->descripcion=$request->input('descripcion');
+        $oferta->funciones=$request->input('funciones');
+        $oferta->requisitos=$request->input('requisitos');
+       
+        $oferta->save();
+
+        $oferta=oferta::all();
+        return redirect('oferta/index');
     }
 
     /**
@@ -99,5 +108,21 @@ class OfertaController extends Controller
     {
         Oferta::find($id)->delete();
         return redirect()->route('oferta.index')->with('success','Registro eliminado satisfactoriamente');
+    }
+
+    public function apuntar($id){
+
+        
+        $apuntado=Apuntado::all()->where('idOferta',$id);
+        $alumnos=Alumno::all();
+        return  view('Oferta.apuntados', compact('apuntado'), compact('alumnos'));
+    }
+
+    public function quitarlista($id){
+        
+        
+        $borrar = Apuntado::where('idAlumno', $id);
+        $borrar->delete();
+        return redirect()->back();
     }
 }

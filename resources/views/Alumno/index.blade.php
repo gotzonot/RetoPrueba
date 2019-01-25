@@ -51,6 +51,7 @@
 
                         <div class="single-job-post fix">
                             <div class="job-title col-3 pl-30">
+                                
                                 <span class="pull-left block mtb-17">
                                     <a href="#"><img src= "{{ asset($alumno->foto) }} "width="72" alt="noFoto"></a>
                                 </span>

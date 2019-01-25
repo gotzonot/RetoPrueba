@@ -19,7 +19,9 @@
 
              
                 @foreach($alumnos as $alumno) 
-
+                    @foreach($apuntado as $apuntados)
+                        @if($alumno->id == $apuntados->idAlumno)
+    
 
                         <div class="single-job-post fix">
                             <div class="job-title col-3 pl-30">
@@ -35,9 +37,11 @@
                             </div>
                             <div class="keyword col-4 pl-20 pt-39">
                                 <a href="{{ url('/alumno/show/'.$alumno->id )}}" class="button mr-10">&#9997; Ver</a>
-                                <a href="{{url('/alumno/desactivar/'.$alumno->id)}}" class="button mr-10">Quitar de la lista</a>
+                                <a href="{{url('/oferta/quitarlista/'.$alumno->id)}}" class="button mr-10">Quitar de la lista</a>
                             </div>
                         </div>
+                        @endif
+                    @endforeach
               @endforeach
 
                         </div>
