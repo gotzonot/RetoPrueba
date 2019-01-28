@@ -49,7 +49,8 @@ class OfertaController extends Controller
         $oferta->requisitos=$request->input('requisitos');
         $oferta->save();
         
-         return view('Oferta/index');
+        $ofertas=oferta::all();
+        return redirect('oferta/index');
         //return redirect()->route('oferta.index')->with('success','Registro creado satisfactoriamente');
     }
 
@@ -107,7 +108,8 @@ class OfertaController extends Controller
     public function destroy($id)
     {
         Oferta::find($id)->delete();
-        return redirect()->route('oferta.index')->with('success','Registro eliminado satisfactoriamente');
+       $oferta=oferta::all();
+        return redirect('oferta/index');
     }
 
     public function apuntar($id){

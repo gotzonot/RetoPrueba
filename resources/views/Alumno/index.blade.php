@@ -63,7 +63,7 @@
                                 <span class="mtb-30 block"> {{$alumno->dni}} </span>
                             </div>
                             <div class="keyword col-4 pl-20 pt-39">
-                                <a href="{{ url('/alumno/show/'.$alumno->id )}}" class="button mr-10">&#9997; Ver</a>
+                                <a href="{{ url('/alumno/show/'.$alumno->id )}}" class="button mr-10">&#9997; Detalles</a>
                                 <a href="{{url('/alumno/desactivar/'.$alumno->id)}}" class="button mr-10">Desactivar</a>
                                 <a href="{{url('/alumno/eliminar/'.$alumno->id)}}" class="button">&#x2717; Eliminar</a>
                             </div>

@@ -63,11 +63,7 @@
                                 </div>
                             </div>
                        
-                            <div class="ml-160 mt-42">
-                                 <a type="submit">Guardar</a>
-                            </div>
-
-                            <input type="submit" name="hola" value="hola">
+                            <input type="submit" class="btn btn-info mb-15 w-25"name="guardar" value="Guardar">              
                         </div>
                     </div>
                 </form>

@@ -43,6 +43,7 @@ Route::get('oferta/show/{id}', 'OfertaController@show');
 Route::get('oferta/edit/{id}', 'OfertaController@edit');
 Route::put('oferta/edit/{id}','OfertaController@update');
 Route::get('oferta/create', 'OfertaController@create');
+Route::get('oferta/eliminar/{id}', 'OfertaController@destroy');
 Route::get('oferta/insertar', 'OfertaController@store');
 Route::get('oferta/apuntados/{id}', 'OfertaController@apuntar');
 Route::get('oferta/quitarlista/{id}', 'OfertaController@quitarlista');

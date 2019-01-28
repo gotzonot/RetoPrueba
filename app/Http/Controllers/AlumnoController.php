@@ -117,8 +117,6 @@ class AlumnoController extends Controller
 
         $alumno=Alumno::find($request->id);
         $alumno->update(['baja' => 1]);
-
-
         $alumnos=alumno::all();
         return redirect('alumno/index');
 

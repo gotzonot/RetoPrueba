@@ -51,6 +51,10 @@
     </head>
       
     <body>
+
+        <script>
+            var rol="alumno";
+        </script>
         
         <!--Main Wrapper Start-->
         <div class="as-mainwrapper">
@@ -96,10 +100,11 @@
                                             <ul>
                                                 <li><a href="{{ url('/') }}">Inicio</a>
                                                 </li>
-                                                <li><a href="{{ url('/ofertas') }}">Ofertas</a></li>
+                                                <li><a href="{{ url('/ofertas') }}" >Ofertas</a></li>
                                                 <li><a href="{{ url('/alumnos')  }}">Alumnos</a></li>
                                                 <li><a href="{{ url('/profesores')  }}">Profesores</a></li>
                                                 <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
+                                            
                                             </ul>
                                         </nav>
                                     </div>

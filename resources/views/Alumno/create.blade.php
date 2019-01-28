@@ -23,7 +23,7 @@
                             </div>
 
                             <div class="single-info pb-14">
-                                <label for="nombreapellidos" class="uppercase pull-left m-0">Nombre y Apellidos</label>
+                                <label for="nombreapellidos" class="uppercase pull-left m-0">Nombre/apellidos</label>
                                 <div class="form-box fix">
                                     <input type="text" id="nombreapellidos" name="nombreapellidos" placeholder="Introduzca nombre y apellidos">
                                 </div>
@@ -100,11 +100,11 @@
         
                     <!--FIN FILTROS-->
                             </div>
-                       
-                            <div class="ml-160 mt-42">
-                                 <a href="#" class="button button-medium-box">Guardar</a>
-                            </div>
-                            <input type="submit" name="hola" value="hola">
+                        <div class="mt-38">
+                            <input type="submit" class="btn btn-info mb-15 w-25"name="guardar" value="Guardar">
+                             <input type="submit" onclick="location.href=h"{{ url('/alumno/index')}}" class="btn btn-info mb-15 w-25" value="Atras">
+                        </div>
+                           
                         </div>
                     </div>
                 </form>
