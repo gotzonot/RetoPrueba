@@ -50,7 +50,6 @@
                                 </div>
                             </div>
 
-
                              <div class="single-info mb-14">
                                 <label for="direccion" class="uppercase pull-left m-0">Dirección</label>
                                 <div class="form-box fix">

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function(){
-	return view ('index');
-});
+Route::get('/', 'Auth\LoginController@showAlumnoLoginForm');
 
 Route::get('/perfil', function(){
 	return view ('perfil');
@@ -52,7 +50,23 @@ Route::get('oferta/quitarlista/{id}', 'OfertaController@quitarlista');
 Route::resource('curriculum', 'CurriculumController');
 Route::resource('curso', 'CursoController');
 
+// Gotzon Add's
+Route::get('/login/alumno', 'Auth\LoginController@showAlumnoLoginForm');
+Route::get('/login/profesor', 'Auth\LoginController@showProfesorLoginForm');
+Route::get('/register/alumno', 'Auth\RegisterController@showAlumnoRegisterForm');
+Route::get('/register/profesor', 'Auth\RegisterController@showProfesorRegisterForm');
+
+Route::post('/login/alumno', 'Auth\LoginController@AlumnoLogin');
+Route::post('/login/Profesor', 'Auth\LoginController@ProfesorLogin');
+Route::post('/register/alumno', 'Auth\RegisterController@createAlumno');
+Route::post('/register/profesor', 'Auth\RegisterController@createProfesor');
+
+Route::view('/home', 'home')->middleware('auth');
+Route::view('/index', 'index');
 
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 

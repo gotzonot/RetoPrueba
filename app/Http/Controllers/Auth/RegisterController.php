@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Auth;
+use App\alumno;
+use App\profesor;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -38,8 +41,20 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:alumno');
+        $this->middleware('guest:profesor');
+    }
+    /* 25/01 */
+    public function showAlumnoRegisterForm()
+    {
+        return view('auth.register', ['url' => 'alumno']);
     }
 
+    public function showProfesorRegisterForm()
+    {
+        return view('auth.register', ['url' => 'profesor']);
+    }
+    /* Amaiera */
     /**
      * Get a validator for an incoming registration request.
      *
@@ -55,6 +70,35 @@ class RegisterController extends Controller
         ]);
     }
 
+    /* Registro Profesor y Alumno*/
+
+
+    protected function createAlumno(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $alumno = Alumno::create([
+            'nombreapellidos' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'dni' => $request['dni'],
+            'direccion' => $request['direccion'],
+            'ciudad' => $request['ciudad'],
+            'telefono' => $request['telefono'],
+        ]);
+        return redirect()->intended('login/alumno');
+    }
+
+    protected function createProfesor(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $profesor = Profesor::create([
+            'nombreapellidos' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('login/profesor');
+    }
+    /* Amaiera */
     /**
      * Create a new user instance after a valid registration.
      *

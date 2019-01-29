@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\alumno;
+use Illuminate\Support\Facades\Hash;
 
 class AlumnoController extends Controller
 {
@@ -42,7 +43,7 @@ class AlumnoController extends Controller
         $alumno->nombreapellidos=$request->input('nombreapellidos');
         $alumno->dni=$request->input('dni');
         $alumno->email=$request->input('email');
-        $alumno->password=$request->input('password');
+        $alumno->password=Hash::make($request->input('password'));
         $alumno->direccion=$request->input('direccion');
         $alumno->ciudad=$request->input('ciudad');
         $alumno->telefono=$request->input('telefono');
