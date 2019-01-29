@@ -420,9 +420,11 @@ class ComposerStaticInitb3db3c4d5d308801ef38d60ee0ee3808
     );
 
     public static $classMap = array (
+        'AlumnoTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AlumnoTableSeeder.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AlumnoController' => __DIR__ . '/../..' . '/app/Http/Controllers/AlumnoController.php',
+        'App\\Http\\Controllers\\ApuntadoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApuntadoController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -448,6 +450,7 @@ class ComposerStaticInitb3db3c4d5d308801ef38d60ee0ee3808
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\alumno' => __DIR__ . '/../..' . '/app/alumno.php',
+        'App\\apuntado' => __DIR__ . '/../..' . '/app/apuntado.php',
         'App\\curriculum' => __DIR__ . '/../..' . '/app/curriculum.php',
         'App\\curso' => __DIR__ . '/../..' . '/app/curso.php',
         'App\\oferta' => __DIR__ . '/../..' . '/app/oferta.php',
@@ -2375,6 +2378,7 @@ class ComposerStaticInitb3db3c4d5d308801ef38d60ee0ee3808
         'NunoMaduro\\Collision\\Highlighter' => __DIR__ . '/..' . '/nunomaduro/collision/src/Highlighter.php',
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'OfertaTableSeeder' => __DIR__ . '/../..' . '/database/seeds/OfertaTableSeeder.php',
         'Opis\\Closure\\Analyzer' => __DIR__ . '/..' . '/opis/closure/src/Analyzer.php',
         'Opis\\Closure\\ClosureContext' => __DIR__ . '/..' . '/opis/closure/src/ClosureContext.php',
         'Opis\\Closure\\ClosureScope' => __DIR__ . '/..' . '/opis/closure/src/ClosureScope.php',
@@ -3036,6 +3040,7 @@ class ComposerStaticInitb3db3c4d5d308801ef38d60ee0ee3808
         'PhpParser\\Parser\\Tokens' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+        'ProfesorTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ProfesorTableSeeder.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',

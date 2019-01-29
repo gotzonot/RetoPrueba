@@ -6,9 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AlumnoTableSeeder' => $baseDir . '/database/seeds/AlumnoTableSeeder.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AlumnoController' => $baseDir . '/app/Http/Controllers/AlumnoController.php',
+    'App\\Http\\Controllers\\ApuntadoController' => $baseDir . '/app/Http/Controllers/ApuntadoController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -34,6 +36,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\alumno' => $baseDir . '/app/alumno.php',
+    'App\\apuntado' => $baseDir . '/app/apuntado.php',
     'App\\curriculum' => $baseDir . '/app/curriculum.php',
     'App\\curso' => $baseDir . '/app/curso.php',
     'App\\oferta' => $baseDir . '/app/oferta.php',
@@ -1961,6 +1964,7 @@ return array(
     'NunoMaduro\\Collision\\Highlighter' => $vendorDir . '/nunomaduro/collision/src/Highlighter.php',
     'NunoMaduro\\Collision\\Provider' => $vendorDir . '/nunomaduro/collision/src/Provider.php',
     'NunoMaduro\\Collision\\Writer' => $vendorDir . '/nunomaduro/collision/src/Writer.php',
+    'OfertaTableSeeder' => $baseDir . '/database/seeds/OfertaTableSeeder.php',
     'Opis\\Closure\\Analyzer' => $vendorDir . '/opis/closure/src/Analyzer.php',
     'Opis\\Closure\\ClosureContext' => $vendorDir . '/opis/closure/src/ClosureContext.php',
     'Opis\\Closure\\ClosureScope' => $vendorDir . '/opis/closure/src/ClosureScope.php',
@@ -2622,6 +2626,7 @@ return array(
     'PhpParser\\Parser\\Tokens' => $vendorDir . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
     'PhpParser\\PrettyPrinterAbstract' => $vendorDir . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
     'PhpParser\\PrettyPrinter\\Standard' => $vendorDir . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+    'ProfesorTableSeeder' => $baseDir . '/database/seeds/ProfesorTableSeeder.php',
     'Prophecy\\Argument' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument.php',
     'Prophecy\\Argument\\ArgumentsWildcard' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
     'Prophecy\\Argument\\Token\\AnyValueToken' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',

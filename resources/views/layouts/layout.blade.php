@@ -100,9 +100,17 @@
                                             <ul>
                                                 <li><a href="{{ url('/') }}">Inicio</a>
                                                 </li>
+                                                <script> var app = new Vue({ 
+                                                        el: '#app',
+                                                        data: {
+                                                            rol: 'alumno'
+                                                        }
+                                                    });</script>
                                                 <li><a href="{{ url('/ofertas') }}" >Ofertas</a></li>
-                                                <li><a href="{{ url('/alumnos')  }}">Alumnos</a></li>
-                                                <li><a href="{{ url('/profesores')  }}">Profesores</a></li>
+                                                <div id="app">
+                                                <li><a href="{{ url('/alumnos')  }}" v-if="rol!=alumno">Alumnos</a></li>
+                                                <li><a href="{{ url('/profesores')  }} v-if="rol!=alumno">Profesores</a></li>
+                                                <div>
                                                 <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
                                             
                                             </ul>
@@ -196,7 +204,6 @@
         </div>
         <!--End of Main Wrapper Area-->
 
-
         <!-- jquery latest version
         ========================================================= -->
         <script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -231,6 +238,9 @@
         <!-- Main js file contents all jQuery plugins activation
         ========================================================= -->
         <script src="{{ asset('js/main.js') }}"></script>
+        <!-- VueJs
+        ========================================================= -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     </body>
 

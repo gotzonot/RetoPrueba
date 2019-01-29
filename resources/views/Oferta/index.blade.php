@@ -2,6 +2,7 @@
     @extends('layouts.layout')
     @section('content')
               
+              
                 <!-- CARRUSEL EMPIEZA-->
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                  <!-- Indicators -->
@@ -71,8 +72,8 @@
                                         </div>
                                         <div class="col-2 pl-60 text-center pt-22">            
                                             <a href="{{ url('/oferta/show/'.$oferta->id )}}" class="button btn-orange">Detalles</a>
-                                            <a href="{{ url('/oferta/apuntados/'.$oferta->id )}}" class="button btn-orange mt-10">Lista apuntados</a>
-                                            <a href="{{url('/oferta/eliminar/'.$oferta->id)}}" class="button btn-orange mt-10">&#x2717; Eliminar</a>
+                                            <a href="{{ url('/oferta/apuntados/'.$oferta->id )}}" class="button btn-blue mt-10">Lista apuntados</a>
+                                            <a href="{{url('/oferta/eliminar/'.$oferta->id)}}" class="button btn-red mt-10">&#x2717; Eliminar</a>
                                         </div>
                                     </div>
                             @endforeach   
