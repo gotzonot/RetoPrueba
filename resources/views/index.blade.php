@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                @if(session('rol') != "alumno")
                                 <div class="col-xs-4 bgcolor" id="divalumnos">
                                     <div class="single-blog hover-effect ">
                                         <div class="blog-image box-hover">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                            @endif
                             </div>
                         </div>
                     </div>

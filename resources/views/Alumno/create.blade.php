@@ -98,6 +98,7 @@
                                     </select>
         
                     <!--FIN FILTROS-->
+                    
                             </div>
                         <div class="mt-38">
                             <input type="submit" class="btn btn-info mb-15 w-25"name="guardar" value="Guardar">
@@ -106,6 +107,15 @@
                            
                         </div>
                     </div>
+                </form>
+
+                <!--IMPORTAR CSV-->
+                    <form action="{{ url('/alumno/insertarcsv')}}" method="POST" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                    Meter lista de xls/csv por aqui : <input type="file" name="file" class="form-control"><br/>
+                    formato: nombreapellidos,email,dni,password,direccion,telefono,baja,foto,idCurriculum,idCurso,ciudad
+                    <input type="submit" class="btn btn-primary btn-lg" style="margin-top: 3%">
+                    <!--FIN INSERTAR CSV-->
                 </form>
             </div>
         </div>

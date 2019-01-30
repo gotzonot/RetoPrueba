@@ -26,6 +26,7 @@ Route::put('alumno/edit/{id}','AlumnoController@update');
 Route::get('alumno/insertar', 'AlumnoController@store');
 Route::get('alumno/eliminar/{id}', 'AlumnoController@destroy');
 Route::get('alumno/desactivar/{id}', 'AlumnoController@desactivar');
+Route::post('alumno/insertarcsv', 'AlumnoController@import');
 
 Route::resource('profesor/index', 'ProfesorController');
 Route::get('profesor/show/{id}', 'ProfesorController@show');
@@ -57,7 +58,7 @@ Route::get('/register/alumno', 'Auth\RegisterController@showAlumnoRegisterForm')
 Route::get('/register/profesor', 'Auth\RegisterController@showProfesorRegisterForm');
 
 Route::post('/login/alumno', 'Auth\LoginController@AlumnoLogin');
-Route::post('/login/Profesor', 'Auth\LoginController@ProfesorLogin');
+Route::post('/login/profesor', 'Auth\LoginController@ProfesorLogin');
 Route::post('/register/alumno', 'Auth\RegisterController@createAlumno');
 Route::post('/register/profesor', 'Auth\RegisterController@createProfesor');
 

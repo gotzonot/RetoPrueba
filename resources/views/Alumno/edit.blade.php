@@ -23,7 +23,9 @@
                                     <input type="text" id="nombreapellidos" name="nombreapellidos" value="{{$alumnos->nombreapellidos}}"> 
                                 </div>
                             </div>
-
+@if(session('message'))
+  {{session('message')}}
+@endif
                             <div class="single-info mb-4">
                                 <div class="title uppercase mt-58 mb-25"><span class="medium">Dni</span></div>
                                 <div class="form-box fix">
@@ -65,7 +67,7 @@
                                                                        
                         <div class="mt-38">
                             <input type="submit" class="btn btn-info mb-15 w-25"name="editar" value="Editar">
-                             <input type="submit" onclick="location.href='1.html';href="{{ url('/alumno/index')}}" class="btn btn-info mb-15 w-25" value="Atras">
+                             <input type="submit" onclick="location.href="{{ url('/alumno/index')}}" class="btn btn-info mb-15 w-25" value="Atras">
                         </div>
         
                         </div>

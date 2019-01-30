@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\alumno;
 use Illuminate\Support\Facades\Hash;
+use Session;
+use Excel;
+use File;
 
 class AlumnoController extends Controller
 {
@@ -99,7 +103,7 @@ class AlumnoController extends Controller
         $alumno->save();
 
         $alumnos=alumno::all();
-        return redirect('alumno/index');
+        return redirect('alumno/index')->with('message', 'Alumno editado');;
     }
 
     /**
@@ -122,4 +126,57 @@ class AlumnoController extends Controller
         return redirect('alumno/index');
 
     }
+
+    public function import(Request $request){
+        //validate the xls file
+        $this->validate($request, array(
+            'file'      => 'required'
+        ));
+ 
+        if($request->hasFile('file')){
+            $extension = File::extension($request->file->getClientOriginalName());
+            if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
+ 
+                $path = $request->file->getRealPath();
+                $data = Excel::load($path, function($reader) {
+                })->get();
+                if(!empty($data) && $data->count()){
+ 
+                    foreach ($data as $key => $value) {
+                        $insert[] = [
+                        'nombreapellidos' => $value->nombreapellidos,
+                        'email' => $value->email,
+                        'dni' => $value->dni,
+                        'password' => $value->password,
+                        'direccion' => $value->direccion,
+                        'telefono' => $value->telefono,
+                        'baja' => $value->baja,
+                        'foto' => $value->foto,
+                        'idCurriculum' => $value->idCurriculum,
+                        'idCurso' => $value->idCurso,
+                        'ciudad' => $value->ciudad,
+                        ];
+                    }
+ 
+                    if(!empty($insert)){
+ 
+                        $insertData = DB::table('alumnos')->insert($insert);
+                        if ($insertData) {
+                            Session::flash('success', 'Your Data has successfully imported');
+                        }else {                        
+                            Session::flash('error', 'Error inserting the data..');
+                            return back();
+                        }
+                    }
+                }
+ 
+                return redirect('alumno/index');
+ 
+            }else {
+                Session::flash('error', 'File is a '.$extension.' file.!! Please upload a valid xls/csv file..!!');
+                return back();
+            }
+        }
+    }
+
 }

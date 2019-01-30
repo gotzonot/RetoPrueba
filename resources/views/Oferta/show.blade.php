@@ -35,8 +35,12 @@
                                 </div>
                 
                                 <div class="mt-38">
+                                    @if(session('rol') == "alumno")
                                     <a href="" class="button button-large-box lg-btn mr-20">Apuntarse</a>
+                                    @endif
+                                    @if(session('rol') != "alumno")
                                     <a href="{{ url('/oferta/edit/'.$ofertas->id)}}" class="button button-large-box lg-btn mr-20">Editar</a>
+                                    @endif
                                     <a href="{{ url('/oferta/index')}}" class="button button-large-box lg-btn">Atras</a>
                                 </div>
                             </div>

@@ -50,12 +50,7 @@
       
     </head>
       
-    <body>
-
-        <script>
-            var rol="alumno";
-        </script>
-        
+    <body>      
         <!--Main Wrapper Start-->
         <div class="as-mainwrapper">
             <!--Bg White Start-->
@@ -78,14 +73,24 @@
                                             <li><a href="{{ url('/') }}">Inicio</a>
                                             </li>
                                             <li><a href="{{ url('/oferta/index') }}">Ofertas</a></li>
+                                            @if(session('rol') != "alumno")
                                             <li><a href="{{ url('/alumno/index')  }}">Alumnos</a></li>
                                             <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
+                                             @endif
                                             <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
                                         </ul>
                                     </nav>
-                                    <div class="login-btn pt-36">
-                                         <a class="modal-view button" href="#" data-toggle="modal" data-target="#productModal">Cerrar sesión</a>
-                                    </div>
+                                    <div class="login-btn pt-36" aria-labelledby="navbarDropdown">
+                                        <a class="modal-view button" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Cerrar Sesion') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -100,12 +105,10 @@
                                             <ul>
                                                 <li><a href="{{ url('/') }}">Inicio</a>
                                                 </li>
-                                                <script> var app = new Vue({ 
-                                                        el: '#app',
-                                                        data: {
-                                                            rol: 'alumno'
-                                                        }
-                                                    });</script>
+                                                @if(session('rol') != "alumno")
+                                                    <li><a href="{{ url('/alumno/index')  }}">Alumnos</a></li>
+                                                    <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
+                                                @endif
                                                 <li><a href="{{ url('/ofertas') }}" >Ofertas</a></li>
                                                 <div id="app">
                                                 <li><a href="{{ url('/alumnos')  }}" v-if="rol!=alumno">Alumnos</a></li>

@@ -16,7 +16,7 @@
                                         <div class="single-job-form">
 
                                         	<div class="single-info pb-14">
-                                                <label for="f_name" class="uppercase pull-left m-0">Nombre y Apellidos</label>
+                                                <label for="f_name" class="uppercase pull-left m-0">Nombre/Apellidos</label>
                                                 <div class="form-box fix">
                                                     <input type="text" id="f_name" name="f_name" placeholder="Introduzca su nombre">
                                                 </div>

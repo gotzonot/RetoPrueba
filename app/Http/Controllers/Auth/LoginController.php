@@ -51,11 +51,15 @@ class LoginController extends Controller
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
+        
         if (Auth::guard('alumno')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+        session()->put('rol', 'alumno');
+
+        session()->put('email', $request->email);
 
             return redirect()->intended('/index');
         }
+
         return back()->withInput($request->only('email', 'remember'));
     }
 
@@ -73,6 +77,9 @@ class LoginController extends Controller
 
         if (Auth::guard('profesor')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
+        session()->put('rol', 'profesor');
+
+        session()->put('email', $request->email);
             return redirect()->intended('/index');
         }
         return back()->withInput($request->only('email', 'remember'));

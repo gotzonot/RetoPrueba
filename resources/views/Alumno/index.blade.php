@@ -1,5 +1,10 @@
 @extends('layouts.layout')
 @section('content')
+@if(Session::has('message'))
+<div class="alert-box success">
+    {{ Session::get('message') }}
+</div>
+@endif
 <!-- End of Header Area -->
 <!--Start of Candidates Area-->
     <div class="candidates-area ptb-120">
