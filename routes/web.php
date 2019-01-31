@@ -46,6 +46,7 @@ Route::get('oferta/eliminar/{id}', 'OfertaController@destroy');
 Route::get('oferta/insertar', 'OfertaController@store');
 Route::get('oferta/apuntados/{id}', 'OfertaController@apuntar');
 Route::get('oferta/quitarlista/{id}', 'OfertaController@quitarlista');
+Route::get('oferta/apuntarse/{id}', 'OfertaController@apuntarse');
 
 
 Route::resource('curriculum', 'CurriculumController');
@@ -63,11 +64,9 @@ Route::post('/register/alumno', 'Auth\RegisterController@createAlumno');
 Route::post('/register/profesor', 'Auth\RegisterController@createProfesor');
 
 Route::view('/home', 'home')->middleware('auth');
-Route::view('/index', 'index');
+Route::get('/index', 'IndexController@personalog');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
