@@ -15,51 +15,51 @@
                         <div class="single-job-form">
 
                             <div class="single-info pb-14">
-                                <label for="nombreapellidos" class="uppercase pull-left m-0">Nombre y Apellidos</label>
+                                <label for="nombreapellidos" class="uppercase pull-left m-0">Nombre/Apellidos</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="nombreapellidos" name="nombreapellidos" placeholder="Introduzca nombre y apellidos">
+                                    <input type="text" id="nombreapellidos" name="nombreapellidos" placeholder="Introduzca nombre y apellidos" required>
                                 </div>
                             </div>
 
                             <div class="single-info mb-14">
                                 <label for="dni" class="uppercase pull-left m-0">DNI</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="dni" name="dni" placeholder="Introduzca DNI">
+                                    <input type="text" id="dni" name="dni" placeholder="Introduzca DNI" required>
                                 </div>
                             </div> 
 
                             <div class="single-info mb-14">
                                 <label for="email" class="uppercase pull-left m-0">Email</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="email" name="email" placeholder="Introduzca una dirección de correo electronico">
+                                    <input type="text" id="email" name="email" placeholder="Introduzca una dirección de correo electronico" required>
                                 </div>
                             </div>
 
                             <div class="single-info mb-14">
                                 <label for="password" class="uppercase pull-left m-0">Contraseña</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="password" name="password" placeholder="Establezca una contraseña">
+                                    <input type="text" id="password" name="password" placeholder="Establezca una contraseña" required>
                                 </div>
                             </div>
 
                              <div class="single-info mb-14">
                                 <label for="address" class="uppercase pull-left m-0">Dirección</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="direccion" name="direccion" placeholder="Introduzca una dirección">
+                                    <input type="text" id="direccion" name="direccion" placeholder="Introduzca una dirección" required>
                                 </div>
                             </div>
 
                             <div class="single-info mb-14">
                                 <label for="ciudad" class="uppercase pull-left m-0">Ciudad</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="ciudad" name="ciudad" placeholder="Introduzca su ciudad de residencia">
+                                    <input type="text" id="ciudad" name="ciudad" placeholder="Introduzca su ciudad de residencia" required>
                                 </div>
                             </div>
 
                             <div class="single-info mb-14">
                                 <label for="telefono" class="uppercase pull-left m-0">Teléfono</label>
                                 <div class="form-box fix">
-                                    <input type="text" id="telefono" name="telefono" placeholder="Introduzca su teléfono de contacto">
+                                    <input type="text" id="telefono" name="telefono" placeholder="Introduzca su teléfono de contacto" required>
                                 </div>
                             </div>
 
@@ -74,21 +74,17 @@
                                     </select>
                             </div>
 
-                            <div class="single-info mb-14">
-                                <label for="school_name" class="uppercase pull-left m-0" >Administrador</label>
-                                    <select class="selectpicker" id="admin" name="admin">
-                                        <option>0</option>
-                                        <option>1</option>
                             
-                                    </select>
-                            </div>
                        
-                             <div class="ml-160 mt-42">
-                                 <a href="#" class="button button-medium-box">Guardar</a>
+                             <div class="mt-38">
+                                 <input type="submit" class="btn btn-info mb-15 w-25" id="guardar" name="guardar" value="Guardar">
+
                             </div>
-                            <input type="submit" name="hola" value="hola">
                         </div>
                     </div>
+                </form>
+                <form action="{{ url('/profesor/index')}}">
+                    <input type="submit" onclick="location.href='1.html';href="{{ url('/profesor/index')}}" class="btn btn-info mb-15 w-25" value="Atras">
                 </form>
             </div>
         </div>

@@ -35,9 +35,29 @@
                                 </div>
                 
                                 <div class="mt-38">
+                                    <!-- SI ESTAS LOGEADO COMO ALUMNO -->
                                     @if(session('rol') == "alumno")
-                                    <a href="" class="button button-large-box lg-btn mr-20">Apuntarse</a>
+
+                                        <?php $alumno_apuntado = "falso" ?>
+
+                                        @foreach ($apuntado as $apuntados)
+
+                                            @if(session('idlogin') == $apuntados->idAlumno )
+                                                <!-- SI EL ALUMNO ESTA APUNTADO A LA OFERTA -->
+                                                <?php $alumno_apuntado = "verdad" ?>
+
+                                            @endif
+
+                                        @endforeach
+                                        <!-- VISUALIZA EL BOTON SI EL ALUMNO NO ESTA APUNTADO  -->
+                                        @if($alumno_apuntado == "falso")
+                                            <a href="{{ url('/oferta/apuntarse/'.$ofertas->id)}}" class="button button-large-box lg-btn mr-20">Apuntarse</a>
+                                        @else
+                                            <?php echo "<p style='color:red;'>Ya estas apuntado a la oferta</p>" ?>
+                                        @endif
+
                                     @endif
+
                                     @if(session('rol') != "alumno")
                                     <a href="{{ url('/oferta/edit/'.$ofertas->id)}}" class="button button-large-box lg-btn mr-20">Editar</a>
                                     @endif
@@ -50,4 +70,4 @@
             </div>
         </div>
   @stop
-        <!--End of Single Job Post Area-->
+        <!--End of Single Job Post Area--

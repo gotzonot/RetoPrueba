@@ -64,15 +64,17 @@
                         <div class="single-job-form">
                                                                        
                         <div class="mt-38">
-                           <input type="submit" class="btn btn-info mb-15 w-25"name="editar" value="Editar">
-                            <input type="submit" onclick="location.href='1.html';href="{{ url('/profesor/index')}}" class="btn btn-info mb-15 w-25" value="Atras">
+                           <input type="submit" class="btn btn-info mb-15 w-25" id="guardar" name="guardar" value="Guardar">
+                            
                         </div>
 
                             
                         </div>
                     </div>
                 </form>
- 
+                <form action="{{ url('/profesor/index')}}">
+                    <input type="submit" onclick="location.href='1.html';href="{{ url('/profesor/index')}}" class="btn btn-info mb-15 w-25" value="Atras">
+                </form>
             </div>
         </div>
     </div>

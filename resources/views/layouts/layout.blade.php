@@ -244,6 +244,9 @@
         <!-- VueJs
         ========================================================= -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- Control Datos JQuery, RegExp y DOM
+        ========================================================= -->
+        <script src="{{ asset('js/jquery/controldatos.js') }}"></script>
 
     </body>
 

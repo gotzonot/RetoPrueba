@@ -1,5 +1,4 @@
-    
-    @extends('layouts.layout')
+@extends('layouts.layout')
     @section('content')
                 <!-- End of Header Area -->
                 
@@ -19,7 +18,11 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-
+                                @if(session('rol') == "alumno")
+                                    {{ session()->put('idlogin', $persona->id) }}
+                                @else
+                                    {{ session()->put('idlogin', $persona->id) }}
+                                @endif
                                 <div class="col-xs-4" id="divperfil">
                                     <div class="single-blog hover-effect">
                                         <div class="blog-image box-hover">
@@ -28,7 +31,8 @@
                                             </a>
                                         </div>
                                         <div class="blog-text">
-                                            <h5 class="pt-28 mb-70 text-center"><a href="#">Mi perfil</a></h5>
+                                            <h5 class="pt-28 mb-70 text-center"><a href="{{ url('/perfil')  }}">Mi perfil</a></h5>
+
                                         </div>
                                     </div>
                                 </div>
