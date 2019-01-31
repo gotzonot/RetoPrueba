@@ -63,7 +63,8 @@ class OfertaController extends Controller
     public function show($id)
     {
        $ofertas=Oferta::find($id);
-       return  view('Oferta.show', compact('ofertas'));
+       $apuntado=Apuntado::all()->where('idOferta',$id);
+       return  view('Oferta.show', compact('ofertas'), compact('apuntado'));
     }
 
     /**
@@ -125,6 +126,15 @@ class OfertaController extends Controller
         
         $borrar = Apuntado::where('idAlumno', $id);
         $borrar->delete();
+        return redirect()->back();
+    }
+    public function apuntarse($id){
+
+        
+        $apuntado= new apuntado;
+        $apuntado->idAlumno = session('idlogin');
+        $apuntado->idOferta = $id;
+        $apuntado->save();
         return redirect()->back();
     }
 }

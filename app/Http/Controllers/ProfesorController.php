@@ -47,7 +47,7 @@ class ProfesorController extends Controller
         $profesor->ciudad=$request->input('ciudad');
         $profesor->telefono=$request->input('telefono');
         $profesor->departamento=$request->input('departamento');
-        $profesor->admin=$request->input('admin');
+        $profesor->admin=0;
         $profesor->save();
         
         $profesores=profesor::all();
