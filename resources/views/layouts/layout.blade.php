@@ -90,6 +90,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
+                                        <a href="{{ url('/../manual.html') }}" target="_blank" >Manual de usuario</a>
                                 </div>
                                 </div>
                             </div>
