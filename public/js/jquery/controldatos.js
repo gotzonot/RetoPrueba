@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+    var nombrebien = false;
+    var dnibien = false;
+    var emailbien = false;
+    var tlfbien = false;
+    var passbien = false;
+
     function validarnomape(value){
 
         var nomapeRexp = /^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])?$/g;
@@ -7,20 +13,23 @@ $(document).ready(function(){
 
         if (!nomapeRexp.test(str)){
             document.getElementById("nombreapellidos").style.color = "red";
-
+            nombrebien = false;
             document.getElementById("guardar").disabled = true;
             document.getElementById("nombreapellidos").style.border = "1px solid red";
+
            
         } else {
             document.getElementById("nombreapellidos").style.color = "green";  
-
-            document.getElementById("guardar").disabled = false; 
+            nombrebien = true;
             document.getElementById("nombreapellidos").style.border = "1px solid green";
         }
     };
 
     $("#nombreapellidos").focusout(function(){                            
-        validarnomape($('#nombreapellidos').val());                                
+        validarnomape($('#nombreapellidos').val());
+        if(nombrebien == true && dnibien == true && emailbien == true && tlfbien == true){
+            document.getElementById("guardar").disabled = false;
+        };                                
     });
 
     function validardni(value){
@@ -30,19 +39,22 @@ $(document).ready(function(){
 
         if (!dniRexp.test(str)){
             document.getElementById("dni").style.color = "red";
-            
+            dnibien = false;
             document.getElementById("guardar").disabled = true;
             document.getElementById("dni").style.border = "1px solid red";
         } else {
             document.getElementById("dni").style.color = "green";  
-           
-            document.getElementById("guardar").disabled = false;  
+            dnibien = true;
+             
             document.getElementById("dni").style.border = "1px solid green";
         }
     };
 
     $("#dni").focusout(function(){                            
-        validardni($('#dni').val());                                
+        validardni($('#dni').val());
+        if(nombrebien == true && dnibien == true && emailbien == true && tlfbien == true){
+            document.getElementById("guardar").disabled = false;
+        };                                
     });
 
     function validaremail(value){
@@ -52,17 +64,22 @@ $(document).ready(function(){
 
         if (!emailRexp.test(str)){
             document.getElementById("email").style.color = "red";
+            emailbien = false;
             document.getElementById("guardar").disabled = true;
             document.getElementById("email").style.border = "1px solid red";
         } else {
-            document.getElementById("email").style.color = "green";  
-            document.getElementById("guardar").disabled = false;   
+            document.getElementById("email").style.color = "green"; 
+            emailbien = true; 
+             
             document.getElementById("email").style.border = "1px solid green";
         }
     };
 
     $("#email").focusout(function(){                            
-        validaremail($('#email').val());                                
+        validaremail($('#email').val());
+        if(nombrebien == true && dnibien == true && emailbien == true && tlfbien == true){
+            document.getElementById("guardar").disabled = false;
+        };                                
     });
 
     function validartlf(value){
@@ -72,17 +89,23 @@ $(document).ready(function(){
 
         if (!tlfRexp.test(str)){
             document.getElementById("telefono").style.color = "red";
+            tlfbien = false;
             document.getElementById("guardar").disabled = true;
             document.getElementById("telefono").style.border = "1px solid red";
         } else {
-            document.getElementById("telefono").style.color = "green";  
-            document.getElementById("guardar").disabled = false;   
+            document.getElementById("telefono").style.color = "green";
+            tlfbien = true;  
+             
             document.getElementById("telefono").style.border = "1px solid green";
         }
     };
 
     $("#telefono").focusout(function(){                            
-        validartlf($('#telefono').val());                                
+        validartlf($('#telefono').val());
+
+        if(nombrebien == true && dnibien == true && emailbien == true && tlfbien == true){
+            document.getElementById("guardar").disabled = false;
+        };                                
     });
 
     function validarpass(value){
@@ -92,20 +115,21 @@ $(document).ready(function(){
 
         if (!passRexp.test(str)){
             document.getElementById("password").style.color = "red";
+            passbien = false;
             document.getElementById("guardar").disabled = true;
             document.getElementById("password").style.border = "1px solid red";
         } else {
-            document.getElementById("password").style.color = "green";  
-            document.getElementById("guardar").disabled = false;   
+            document.getElementById("password").style.color = "green";
+            passbien = true;    
             document.getElementById("password").style.border = "1px solid green";
         }
     };
 
     $("#password").focusout(function(){                            
-        validarpass($('#password').val());                                
-    });
-
-//----------------------- CREAR ALUMNO ----------------------------------------------------------------------
-
+        validarpass($('#password').val());
+        if(nombrebien == true && dnibien == true && emailbien == true && tlfbien == true && passbien == true){
+            document.getElementById("guardar").disabled = false;
+        };                               
+    }); 
 
 });
