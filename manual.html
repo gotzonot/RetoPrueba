@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>jJobson</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container" id= "app">
+		
+		<!--TITULO -->
+		<div class="row p-3 bg-dark text-light">
+			<div class="col">
+				<br><br><br>
+				<h1 class="text-center">{{titulo}}</h1>
+				
+				<hr class="bg-light">
+				<br><br>
+			</div>
+		</div>
+		<!--ARTICULOS -->
+		<div class="row p-3  bg-light">
+			<div class="col-md-6">
+				<br><button @click="showProfesor = false; showAlumno = true; ">Soy un Alumno</button>	
+			</div>
+			<div class="col-md-6">
+				<br><button @click="showAlumno = false; showProfesor = true; ">Soy un profesor</button>
+
+			</div>
+			<div class="col-md-12">
+				<p class="text-left" v-if="showAlumno">{{parrafo1 }}</p>
+				<p class="text-left" v-if="showProfesor">{{parrafo2 }}</p>
+			</div>
+		</div>
+		
+	</div>
+
+	<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        titulo: 'Manual de Usuario jJobson',
+        parrafo1: 'SOY UN ALUMNO Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta sagittis ligula, quis porttitor turpis rutrum at. In semper pellentesque felis et feugiat. Suspendisse neque lectus, ornare non nulla ornare, auctor convallis nisl. Phasellus porta massa id nunc sagittis, vel ornare ante scelerisque. Donec et nulla et nulla sagittis ornare rutrum in ipsum. Praesent a rhoncus augue, ',
+        parrafo2: ' SOY UN PROFESOR Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porta sagittis ligula, quis porttitor turpis rutrum at. In semper pellentesque felis et feugiat. Suspendisse neque lectus, ornare non nulla ornare, auctor convallis nisl. Phasellus porta massa id nunc sagittis, vel ornare ante scelerisque. Donec et nulla et nulla sagittis ornare rutrum in ipsum. Praesent a rhoncus augue,',
+        showAlumno:false,
+        showProfesor:false,
+       
+      },
+
+      	
+    })
+  </script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
