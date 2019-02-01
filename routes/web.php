@@ -13,11 +13,13 @@
 
 Route::get('/', 'Auth\LoginController@showAlumnoLoginForm');
 
-Route::get('/perfil', function(){
-	return view ('perfil');
-});
+//perfil
 
+Route::get('/perfil', 'PerfilController@cargarperfil');
+Route::get('/perfil/editar', 'PerfilController@cargarperfileditar');
+Route::get('/perfil/actualizar/{id}', 'PerfilController@actualizar');
 
+//alumno
 Route::resource('alumno/index', 'AlumnoController');
 Route::get('alumno/show/{id}', 'AlumnoController@show');
 Route::get('alumno/edit/{id}', 	'AlumnoController@edit');
@@ -27,7 +29,7 @@ Route::get('alumno/insertar', 'AlumnoController@store');
 Route::get('alumno/eliminar/{id}', 'AlumnoController@destroy');
 Route::get('alumno/desactivar/{id}', 'AlumnoController@desactivar');
 Route::post('alumno/insertarcsv', 'AlumnoController@import');
-
+//profesor
 Route::resource('profesor/index', 'ProfesorController');
 Route::get('profesor/show/{id}', 'ProfesorController@show');
 Route::get('profesor/edit/{id}', 'ProfesorController@edit');
@@ -36,7 +38,7 @@ Route::put('profesor/edit/{id}','ProfesorController@update');
 Route::get('profesor/insertar', 'ProfesorController@store');
 Route::get('profesor/eliminar/{id}', 'ProfesorController@destroy');
 Route::get('profesor/desactivar/{id}', 'ProfesorController@desactivar');
-
+//ofertas
 Route::resource('oferta/index', 'OfertaController');
 Route::get('oferta/show/{id}', 'OfertaController@show');
 Route::get('oferta/edit/{id}', 'OfertaController@edit');
