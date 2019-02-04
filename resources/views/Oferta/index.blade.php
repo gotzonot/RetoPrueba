@@ -1,7 +1,13 @@
     
     @extends('layouts.layout')
     @section('content')
-              
+              <script>
+  var msg = '{{Session::get('message')}}';
+  var exist = '{{Session::has('message')}}';
+  if(exist){
+    alert(msg);
+  }
+</script>
               
                 <!-- CARRUSEL EMPIEZA-->
               <div id="myCarousel" class="carousel slide" data-ride="carousel">

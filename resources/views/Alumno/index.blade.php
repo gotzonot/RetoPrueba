@@ -1,10 +1,12 @@
 @extends('layouts.layout')
 @section('content')
-@if(Session::has('message'))
-<div class="alert-box success">
-    {{ Session::get('message') }}
-</div>
-@endif
+<script>
+  var msg = '{{Session::get('message')}}';
+  var exist = '{{Session::has('message')}}';
+  if(exist){
+    alert(msg);
+  }
+</script>
 <!-- End of Header Area -->
 <!--Start of Candidates Area-->
     <div class="candidates-area ptb-120">

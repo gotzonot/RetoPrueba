@@ -62,7 +62,7 @@
                                             <div class="single-info mb-14 fix">
                                                     <label for="photo" class="uppercase pull-left m-0">Curriculum Vitae</label>
                                                     <div class="photo-uploader fix pull-left" id="fileupload">
-                                                        <input type="file" id="cv" name="fileupload">
+                                                        <input type="file" id="cv" name="curriculum">
                                                         <span class="filename">Sube tu Curriculum aquí</span> 
                                                      <span class="action">Buscar</span> 
                                                 </div>
