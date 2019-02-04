@@ -61,9 +61,13 @@ class PerfilController extends Controller
         $perfil->ciudad=$request->input('ciudad');
         $perfil->telefono=$request->input('telefono');
 
+        
+
         $perfil->save();
 
         $alumnos=alumno::all();
         return redirect('perfil')->with('message', 'Alumno editado');
     }
+
+
 }

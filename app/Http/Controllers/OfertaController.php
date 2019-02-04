@@ -50,7 +50,7 @@ class OfertaController extends Controller
         $oferta->save();
         
         $ofertas=oferta::all();
-        return redirect('oferta/index');
+        return redirect('oferta/index')->with('message','Oferta añadido con exito');
         //return redirect()->route('oferta.index')->with('success','Registro creado satisfactoriamente');
     }
 
@@ -97,7 +97,7 @@ class OfertaController extends Controller
         $oferta->save();
 
         $oferta=oferta::all();
-        return redirect('oferta/index');
+        return redirect('oferta/index')->with('message','Oferta editada con exito');
     }
 
     /**
@@ -109,8 +109,8 @@ class OfertaController extends Controller
     public function destroy($id)
     {
         Oferta::find($id)->delete();
-       $oferta=oferta::all();
-        return redirect('oferta/index');
+        $oferta=oferta::all();
+        return redirect('oferta/index')->with('message','Oferta eliminada con exito');;
     }
 
     public function apuntar($id){
@@ -126,7 +126,7 @@ class OfertaController extends Controller
         
         $borrar = Apuntado::where('idAlumno', $id);
         $borrar->delete();
-        return redirect()->back();
+        return redirect()->back()->with('message','Alumno quitado de la lista');;
     }
     public function apuntarse($id){
 

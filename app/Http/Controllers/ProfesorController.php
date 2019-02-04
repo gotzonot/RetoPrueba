@@ -51,7 +51,7 @@ class ProfesorController extends Controller
         $profesor->save();
         
         $profesores=profesor::all();
-        return redirect('profesor/index');
+        return redirect('profesor/index')->with('message','Profesor añadido con exito');
     }
 
     /**
@@ -98,7 +98,7 @@ class ProfesorController extends Controller
         $profesor->save();
 
         $profesor=profesor::all();
-        return redirect('profesor/index');
+        return redirect('profesor/index')->with('message','Profesor actualizado con exito');
     }
 
     /**
@@ -111,7 +111,7 @@ class ProfesorController extends Controller
     {
         Profesor::find($id)->delete();
         $profesores=profesor::all();
-        return redirect('profesor/index');
+        return redirect('profesor/index')->with('message','Profesor eliminado con exito');;;
     }
 
     public function desactivar(Request $request){
@@ -120,7 +120,7 @@ class ProfesorController extends Controller
         $profesor->update(['baja' => 1]);
         
         $profesor=profesor::all();
-        return redirect('profesor/index');
+        return redirect('profesor/index')->with('message','Profesor desactivado con exito');;;
 
     }
 }

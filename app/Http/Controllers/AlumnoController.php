@@ -54,7 +54,7 @@ class AlumnoController extends Controller
         $alumno->save();
 
         $alumnos=alumno::all();
-        return redirect('alumno/index');
+        return redirect('alumno/index')->with('message','Alumno creado con exito');
     }
 
     /**
@@ -103,7 +103,7 @@ class AlumnoController extends Controller
         $alumno->save();
 
         $alumnos=alumno::all();
-        return redirect('alumno/index')->with('message', 'Alumno editado');;
+        return redirect('alumno/index')->with('message','Alumno editado con exito');
     }
 
     /**
@@ -116,14 +116,14 @@ class AlumnoController extends Controller
     {
         Alumno::find($id)->delete();
         $alumnos=alumno::all();
-        return redirect('alumno/index');
+        return redirect('alumno/index')->with('message','Alumno eliminado con exito');
 }
     public function desactivar(Request $request){
 
         $alumno=Alumno::find($request->id);
         $alumno->update(['baja' => 1]);
         $alumnos=alumno::all();
-        return redirect('alumno/index');
+        return redirect('alumno/index')->with('message','Alumno desactivado con exito');;
 
     }
 
@@ -174,9 +174,10 @@ class AlumnoController extends Controller
  
             }else {
                 Session::flash('error', 'File is a '.$extension.' file.!! Please upload a valid xls/csv file..!!');
-                return back();
+                return back()->with('message','Alumnos añadidos con exito');
             }
         }
     }
+
 
 }
