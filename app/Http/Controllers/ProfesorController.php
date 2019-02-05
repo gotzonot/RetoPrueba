@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\profesor;
 
 class ProfesorController extends Controller
@@ -40,9 +42,10 @@ class ProfesorController extends Controller
         //$this->validate($request,['departamento'=>'required', 'nombreApellidos'=>'required', 'dni'=>'required', 'email'=>'required', 'password'=>'required', 'admin'=>'required']);
         $profesor= new profesor;
         $profesor->nombreapellidos=$request->input('nombreapellidos');
+        $profesor->foto="/images/avatar.png";
         $profesor->dni=$request->input('dni');
         $profesor->email=$request->input('email');
-        $profesor->password=$request->input('password');
+        $profesor->password=Hash::make($request->input('password'));
         $profesor->direccion=$request->input('direccion');
         $profesor->ciudad=$request->input('ciudad');
         $profesor->telefono=$request->input('telefono');
@@ -116,8 +119,9 @@ class ProfesorController extends Controller
 
     public function desactivar(Request $request){
 
-        $profesor=Profesor::find($request->id);
-        $profesor->update(['baja' => 1]);
+        DB::table('profesores')
+            ->where('id', $request->id)
+            ->update(array('baja' => 1));
         
         $profesor=profesor::all();
         return redirect('profesor/index')->with('message','Profesor desactivado con exito');;;

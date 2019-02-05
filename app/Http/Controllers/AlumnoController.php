@@ -19,7 +19,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $alumnos=alumno::all()->where('baja',0);
+        $alumnos=alumno::all();
         return view('Alumno.index',compact('alumnos')); 
     }
 
@@ -120,10 +120,21 @@ class AlumnoController extends Controller
 }
     public function desactivar(Request $request){
 
-        $alumno=Alumno::find($request->id);
-        $alumno->update(['baja' => 1]);
+        DB::table('alumnos')
+            ->where('id', $request->id)
+            ->update(array('baja' => 1));
         $alumnos=alumno::all();
         return redirect('alumno/index')->with('message','Alumno desactivado con exito');;
+
+    }
+
+    public function activar(Request $request){
+
+        DB::table('alumnos')
+            ->where('id', $request->id)
+            ->update(array('baja' => 0));
+        $alumnos=alumno::all();
+        return redirect('alumno/index')->with('message','Alumno activado con exito');;
 
     }
 
@@ -147,7 +158,7 @@ class AlumnoController extends Controller
                         'nombreapellidos' => $value->nombreapellidos,
                         'email' => $value->email,
                         'dni' => $value->dni,
-                        'password' => $value->password,
+                        'password' => Hash::make($value->password),
                         'direccion' => $value->direccion,
                         'telefono' => $value->telefono,
                         'baja' => $value->baja,
