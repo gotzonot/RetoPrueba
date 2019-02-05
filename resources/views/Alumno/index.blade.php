@@ -68,10 +68,20 @@
                             </div>
                             <div class="address col-3 pl-100">
                                 <span class="mtb-30 block"> {{$alumno->dni}} </span>
+                                @if($alumno->baja == 0)
+                                <span class="mtb-30 block" style="color:green"> Activo </span>
+                                @else
+                                <span class="mtb-30 block" style="color:red"> No activo </span>
+                                @endif
                             </div>
                             <div class="keyword col-4 pl-20 pt-39">
                                 <a href="{{ url('/alumno/show/'.$alumno->id )}}" class="button mr-10">&#9997; Detalles</a>
+                                @if($alumno->baja == 0)
                                 <a href="{{url('/alumno/desactivar/'.$alumno->id)}}" class="button mr-10">Desactivar</a>
+                                @else
+                                <a href="{{url('/alumno/activar/'.$alumno->id)}}" class="button mr-10">
+                                Activar</a>
+                                @endif
                                 <a href="{{url('/alumno/eliminar/'.$alumno->id)}}" class="button">&#x2717; Eliminar</a>
                             </div>
                         </div>

@@ -1,5 +1,15 @@
 @extends('layouts.layout')
     @section('content')
+    @if($persona->baja == 1)
+        <script>
+        event.preventDefault();
+        document.getElementById('logout-form').submit();
+    </script>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+
+        @endif
                 <!-- End of Header Area -->
                 
                 <!--Start of Blog Area-->

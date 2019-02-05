@@ -78,6 +78,7 @@
                                             <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
                                              @endif
                                             <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
+                                            <li><a href="{{ url('/../manual.html') }}" target="_blank" >Manual de usuario</a></li>
                                         </ul>
                                     </nav>
                                     <div class="login-btn pt-36" aria-labelledby="navbarDropdown">
@@ -90,7 +91,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
-                                        <a href="{{ url('/../manual.html') }}" target="_blank" >Manual de usuario</a>
+
                                 </div>
                                 </div>
                             </div>

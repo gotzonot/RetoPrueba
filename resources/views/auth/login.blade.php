@@ -66,10 +66,16 @@
                                         {{ __('Has olvidado tu contraseña?') }}
                                     </a>
                                 @endif
-                                 <a class="btn btn-primary" href="{{ url('/login/profesor') }}">
+
+                                @if (Request::is('login/profesor'))
+                                    <a class="btn btn-primary" href="{{ url('/') }}">
+                                        {{ __('Acceso Alumnos') }}
+                                    </a>
+                                @else
+                                    <a class="btn btn-primary" href="{{ url('/login/profesor') }}">
                                         {{ __('Acceso Profesores') }}
                                     </a>
-                              
+                                @endif
                             </div>
                         </div>
                     </form>
