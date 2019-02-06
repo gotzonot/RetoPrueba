@@ -134,7 +134,7 @@ class ProfesorController extends Controller
             ->where('id', $request->id)
             ->update(array('baja' => 0));
         $profesores=Profesor::all();
-        return redirect('profesor/index')->with('message','Alumno activado con exito');;
+        return redirect('profesor/index')->with('message','Profesor activado con exito');;
 
     }
 }
