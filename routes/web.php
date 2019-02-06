@@ -28,7 +28,6 @@ Route::put('alumno/edit/{id}','AlumnoController@update');
 Route::get('alumno/insertar', 'AlumnoController@store');
 Route::get('alumno/eliminar/{id}', 'AlumnoController@destroy');
 Route::get('alumno/desactivar/{id}', 'AlumnoController@desactivar');
-Route::get('alumno/activar/{id}', 'AlumnoController@activar');
 Route::post('alumno/insertarcsv', 'AlumnoController@import');
 //profesor
 Route::resource('profesor/index', 'ProfesorController');
