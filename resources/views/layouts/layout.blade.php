@@ -51,6 +51,7 @@
     </head>
       
     <body>      
+        <script src="js/jquery/footer.js"></script>
         <!--Main Wrapper Start-->
         <div class="as-mainwrapper">
             <!--Bg White Start-->
@@ -192,7 +193,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="footer-text">
-                                     <span class="text-white block">Copyright&copy; <span>Talde5</span> 2019. Todos los derechos reservados. Creado por Aritz Pérez, Alexander Lara, Gotzon Otazua y Andrea Fernández.</a>
+                                     <span class="text-white block" id="cargafooter">
                                     </span>
                                 </div>
                             </div>
