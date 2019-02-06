@@ -16,7 +16,7 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        $profesores=profesor::all()->where('baja',0);
+        $profesores=profesor::all();
         return view('Profesor.index',compact('profesores')); 
     }
 
@@ -125,6 +125,16 @@ class ProfesorController extends Controller
         
         $profesor=profesor::all();
         return redirect('profesor/index')->with('message','Profesor desactivado con exito');;;
+
+    }
+
+    public function activar(Request $request){
+
+        DB::table('profesores')
+            ->where('id', $request->id)
+            ->update(array('baja' => 0));
+        $profesores=Profesor::all();
+        return redirect('profesor/index')->with('message','Alumno activado con exito');;
 
     }
 }
